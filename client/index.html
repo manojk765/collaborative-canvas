@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collaborative Canvas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login">
+    <h2>Join or Create a Room</h2>
+    <input type="text" id="room-code" placeholder="Enter Room Code" maxlength="6">
+    <input type="text" id="user-name" placeholder="Enter Your Name" value="Anonymous">
+    <button id="join-room">Join Room</button>
+    <button id="create-room">Create New Room</button>
+    <p id="error-msg" style="color: red;"></p>
+  </div>
+  <div id="app" style="display: none;">
+    <div id="toolbar">
+      <span id="room-info">Room: <span id="room-code-display"></span> <button id="copy-code">Copy Code</button></span>
+      <input type="text" id="edit-name" placeholder="Edit Name">
+      <button id="update-name">Update Name</button>
+      <button id="brush">Brush</button>
+      <button id="eraser">Eraser</button>
+      <input type="color" id="color" value="#000000">
+      <input type="range" id="width" min="1" max="20" value="5">
+      <button id="undo">Undo</button>
+      <button id="redo">Redo</button>
+      <button id="leave-room">Leave Room</button>
+    </div>
+    <div id="canvas-container">
+      <div id="loading" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; color: gray;">Loading...</div>
+      <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+    <div id="sidebar">
+      <h3>Online Users in Room</h3>
+      <ul id="user-list"></ul>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="canvas.js"></script>
+  <script src="websocket.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
