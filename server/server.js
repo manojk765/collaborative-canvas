@@ -4,9 +4,11 @@ const socketIo = require('socket.io');
 const Rooms = require('./rooms');
 const cors = require('cors') ;
 
-app.use(cors({ origin: "*" }));
 
 const app = express();
+
+app.use(cors({ origin: "*" }));
+
 const server = http.createServer(app);
 const io = socketIo(server);
 
