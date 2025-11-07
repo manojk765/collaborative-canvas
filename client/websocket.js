@@ -1,6 +1,6 @@
 class WebSocketManager {
   constructor(roomCode, userName) {
-    this.socket = io();
+    this.socket = io("https://collaborative-canvas-0aui.onrender.com");
     this.roomCode = roomCode;
     this.userName = userName;
     this.userId = null;
