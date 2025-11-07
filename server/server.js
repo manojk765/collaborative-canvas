@@ -2,11 +2,9 @@ const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
 const Rooms = require('./rooms');
-
-import cors from "cors";
+const cors = require('cors') ;
 
 app.use(cors({ origin: "*" }));
-
 
 const app = express();
 const server = http.createServer(app);
